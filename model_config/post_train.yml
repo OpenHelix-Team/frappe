@@ -1,0 +1,36 @@
+
+model: RDT_post_train
+data_path: path_to_data
+checkpoint_path: path_to_where_your_want_save_checkpoints
+pretrained_model_name_or_path: path_to/rdt-1b
+cuda_visible_device: '0,1'  
+train_batch_size: 8
+sample_batch_size: 64
+max_train_steps: 5000
+checkpointing_period: 500
+sample_period: 100
+checkpoints_total_limit: 30
+learning_rate: 0.0001 
+dataloader_num_workers: 4
+dataset_type: finetune
+state_noise_snr: 40
+gradient_accumulation_steps: 2
+
+experts:
+  dinov2_expert:
+    name: "dinov2_expert"
+    checkpoint_path: path_to_midtrain_checkpoint
+    enc_type: "dinov2-vit-b"    
+    learnable_tokens: 256
+
+  clip_expert:
+    name: "clip_expert"
+    checkpoint_path: path_to_midtrain_checkpoint
+    enc_type: "clip-vit-h"   
+    learnable_tokens: 256      
+  
+  vit_expert:
+    name: "vit_expert"
+    checkpoint_path: path_to_midtrain_checkpoint
+    enc_type: "vit-huge-patch" 
+    learnable_tokens: 256

@@ -1,0 +1,15 @@
+model: RDT_mid_train
+data_path: path_to_data
+checkpoint_path: path_to_where_your_want_save_checkpoints
+pretrained_model_name_or_path: path_to/rdt-1b
+cuda_visible_device: '0,1'
+train_batch_size: 16
+sample_batch_size: 64
+max_train_steps: 15000
+checkpointing_period: 500
+sample_period: 100
+checkpoints_total_limit: 40
+learning_rate: 0.0001
+dataloader_num_workers: 4
+state_noise_snr: 40
+gradient_accumulation_steps: 1
