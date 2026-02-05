@@ -1,4 +1,4 @@
-# Run FLAPPE on RoboTwin (Simulation)
+# Run FRAPPE on RoboTwin (Simulation)
 > This example demonstrates how to run on the **RoboTwin** simulation benchmark.<br/>
 
 
@@ -6,8 +6,8 @@
 First, clone and install the [RoboTwin repo](https://github.com/RoboTwin-Platform/RoboTwin) and required packages. You can follow the guidance in [RoboTwin Document](https://robotwin-platform.github.io/doc/usage/robotwin-install.html#1-dependencies).
 ```bash
 git clone https://github.com/RoboTwin-Platform/RoboTwin.git
-conda create -n flappe python=3.10 -y
-conda activate flappe
+conda create -n frappe python=3.10 -y
+conda activate frappe
 
 bash script/_install.sh  #Install RoboTwin basic envs and CuRobo
 
@@ -16,7 +16,7 @@ bash script/_download_assets.sh #Download assets (RoboTwin-OD, Texture Library a
 Then we can continue to set up the environment for environment. 
 ```bash
 # Make sure python version == 3.10
-conda activate flappe
+conda activate frappe
 
 # Install pytorch
 # Look up https://pytorch.org/get-started/previous-versions/ with your cuda version for a correct command
@@ -42,7 +42,7 @@ git clone xxx
 ```
 RoboTwin
     ├── policy
-    ·   ├── FLAPPE        
+    ·   ├── FRAPPE        
         │
         └── other policys ...
 ```
@@ -84,7 +84,7 @@ For [mid_train.yml](model_config\mid_train.yml), you should update the path of t
 For [post_train.yml](model_config\post_train.yml), you should update the path of the mid-train ckpts, the pretrained_model_name_or_path and the teacher encoder paths;
 
 ```bash
-conda activate flappe
+conda activate frappe
 bash finetune_mid.sh # or bash finetune_post.sh
 ```
 The default configurations match the experimental setup in our paper.
@@ -93,6 +93,6 @@ We offer a inference example for our method ([eval.sh](./eval.sh)).
 
 **model_name** should be the checkpoint file name  under the `./checkpoints` folders.
 ```bash
-conda activate flappe
+conda activate frappe
 bash eval.sh
 ```
