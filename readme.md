@@ -1,7 +1,7 @@
 # Infusing World Modeling into Generalist Policies via Multiple Future Representation Alignment
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)]() [![Page](https://img.shields.io/badge/Project--Page-blue?style=for-the-badge&logo=homepage&logoColor=white)](https://h-zhao1997.github.io/frappe) [![Hugging Face Collection](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=white)]() 
+[![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)]() [![Page](https://img.shields.io/badge/Project--Page-blue?style=for-the-badge&logo=homepage&logoColor=white)](https://h-zhao1997.github.io/frappe) [![Hugging Face Collection](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/hhhJB/FRAPPE) 
 
 </div>
 
@@ -11,11 +11,14 @@
 ## 📃 Overview
 ![teaser](./figs/teaser.png)
 
-## 🚀 Get Started
-> This example demonstrates how to run on the **RoboTwin** simulation benchmark.<br/>
+## Contents
+ * [**Environment Setup**](#environment-setup)
+ * [**Installation**](#installation)
+ * [**Getting Started**](#getting-started)
+ * [**Training**](#training)
 
 
-### 1. Environment Setup
+## Environment Setup
 First, clone and install the [RoboTwin repo](https://github.com/RoboTwin-Platform/RoboTwin) and required packages. You can follow the guidance in [RoboTwin Document](https://robotwin-platform.github.io/doc/usage/robotwin-install.html#1-dependencies).
 ```bash
 git clone https://github.com/RoboTwin-Platform/RoboTwin.git
@@ -59,7 +62,7 @@ RoboTwin
         │
         └── other policys ...
 ```
-### 2. Download Model
+## Installation
 Download the pretrained ckpt nad Encoders we will use in the training stage.
 
 ```bash
@@ -89,7 +92,25 @@ huggingface-cli download facebook/dinov2-base
 ```
 Then update your real paths of teacher encoders (Theia, CLIP, VIT, DINOv2) in the [utils.py](./models/utils.py).
 
-### 3. Training
+## Getting Started
+You can download the checkpoints from [Huggingface](https://huggingface.co/hhhJB/FRAPPE).
+
+The directory structure will be as below:
+```
+flappe
+    ├── checkpoints
+    ·   ├── flappe_taskxxx        
+        │   └──checkpoint-xxx
+        └── ...
+```
+We offer a inference example for our method ([eval.sh](./eval.sh)). 
+**model_name** should be the checkpoint file name  under the `./checkpoints` folders. 
+```bash
+conda activate frappe
+bash eval.sh
+```
+
+## Training
 We offer a training example for our method. It contains two stage training: 
 1) **mid-training ([finetune_mid.sh](finetune_mid.sh) & model_config/[mid_train.yml](model_config\mid_train.yml))**  
 For [mid_train.yml](model_config\mid_train.yml), you should update the path of the pretrained ckpts and the pretrained_model_name_or_path; 
@@ -101,14 +122,7 @@ conda activate frappe
 bash finetune_mid.sh # or bash finetune_post.sh
 ```
 The default configurations match the experimental setup in our paper.
-### 4. Inference
-We offer a inference example for our method ([eval.sh](./eval.sh)). 
 
-**model_name** should be the checkpoint file name  under the `./checkpoints` folders.
-```bash
-conda activate frappe
-bash eval.sh
-```
 
 
 ## 🔥 TODO List
