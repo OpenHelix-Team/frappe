@@ -1,7 +1,7 @@
 # Infusing World Modeling into Generalist Policies via Multiple Future Representation Alignment
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)]() [![Page](https://img.shields.io/badge/Project--Page-blue?style=for-the-badge&logo=homepage&logoColor=white)]() [![Hugging Face Collection](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=white)]() 
+[![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)]() [![Page](https://img.shields.io/badge/Project--Page-blue?style=for-the-badge&logo=homepage&logoColor=white)](https://h-zhao1997.github.io/frappe) [![Hugging Face Collection](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=white)]() 
 
 </div>
 
@@ -24,7 +24,7 @@ For further discussion and collaboration, please feel free to contact us via Ema
 
 | Author | Email | WeChat |
 |:---:|:---:|:---:|
-| Han Zhao |  |  |
+| Han Zhao | zhaohan34@westlake.edu.cn | este_zh |
 | Jingbo Wang | guangtouchangkaishen@outlook.com | guangtouchangkaishen |
 | Wenxuan Song | songwenxuan0115@gmail.com | swx0757 |
 
