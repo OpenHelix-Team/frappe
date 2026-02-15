@@ -1,7 +1,7 @@
 # Infusing World Modeling into Generalist Policies via Multiple Future Representation Alignment
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)]() [![Page](https://img.shields.io/badge/Project--Page-blue?style=for-the-badge&logo=homepage&logoColor=white)](https://h-zhao1997.github.io/frappe) [![Hugging Face Collection](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/hhhJB/FRAPPE) 
+[![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)]() [![Page](https://img.shields.io/badge/Project--Page-blue?style=for-the-badge&logo=homepage&logoColor=white)](https://h-zhao1997.github.io/frappe) [![Hugging Face Collection](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/collections/hhhJB/frappe) 
 
 </div>
 
@@ -93,7 +93,7 @@ huggingface-cli download facebook/dinov2-base
 Then update your real paths of teacher encoders (Theia, CLIP, VIT, DINOv2) in the [utils.py](./models/utils.py).
 
 ## Getting Started
-You can download the checkpoints from [Huggingface](https://huggingface.co/hhhJB/FRAPPE).
+You can download the checkpoints from [Huggingface](https://huggingface.co/collections/hhhJB/frappe).
 
 The directory structure will be as below:
 ```
