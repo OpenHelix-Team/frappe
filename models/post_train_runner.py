@@ -616,5 +616,26 @@ class MOERDTRunner(nn.Module, CompatiblePyTorchModelHubMixin):
             'fused_action': fused_action[:, :action_gt.shape[1], :],  
         }
 
+    def predict_action(self, lang_tokens, lang_attn_mask, img_tokens, state_tokens, action_mask, ctrl_freqs):
+
+        gate_input, expert_hidden_states = self.get_gate_input(lang_tokens, lang_attn_mask, img_tokens, state_tokens, action_mask, ctrl_freqs)
+        gate_weights, _ = self.gate_network(gate_input)
+        gate_weights = self.apply_label_smoothing_to_weights(gate_weights)
+        expert_hidden_states = [h.to(gate_weights.device) for h in expert_hidden_states]
+        expert_hidden_states = torch.stack(expert_hidden_states, dim=0)  
+
+        gate_weights_expanded = gate_weights.unsqueeze(-1).unsqueeze(-1)  
+        expert_hidden_states_transposed = expert_hidden_states.transpose(0, 1)  
+ 
+        fused_hidden_states = torch.sum(expert_hidden_states_transposed * gate_weights_expanded, dim=1)  
+        
+        batch_size, horizon, hidden_size = fused_hidden_states.shape
+        fused_hidden_states_flat = fused_hidden_states.reshape(-1, hidden_size)  
+
+        fused_action = self.fusion_final_layer(fused_hidden_states_flat)  
+        predicted_actions = fused_action.reshape(batch_size, horizon, -1)  
+        
+        return predicted_actions
+    
     def forward(self, *args, **kwargs):
         return self.compute_loss(*args, **kwargs)
