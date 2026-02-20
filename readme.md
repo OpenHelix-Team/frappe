@@ -1,12 +1,12 @@
 # Infusing World Modeling into Generalist Policies via Multiple Future Representation Alignment
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)]() [![Page](https://img.shields.io/badge/Project--Page-blue?style=for-the-badge&logo=homepage&logoColor=white)](https://h-zhao1997.github.io/frappe) [![Hugging Face Collection](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/collections/hhhJB/frappe) 
+[![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2602.17259) [![Page](https://img.shields.io/badge/Project--Page-blue?style=for-the-badge&logo=homepage&logoColor=white)](https://h-zhao1997.github.io/frappe) [![Hugging Face Collection](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/collections/hhhJB/frappe) 
 
 </div>
 
 ## :loudspeaker: News!
-- **[2026/2/xx]** We released our paper on [ArXiv]().
+- **[2026/2/20]** We released our paper on [ArXiv](https://arxiv.org/abs/2602.17259).
 
 ## 📃 Overview
 ![teaser](./figs/teaser.png)
@@ -149,5 +149,10 @@ We thank these great works and open-source codebases: [RDT](https://github.com/t
 If you find this work useful, please cite:
 
 ```bibtex
-
+@article{zhao2026frappe,
+    title={FRAPPE: Infusing World Modeling into Generalist Policies via Multiple Future Representation Alignment},
+    author={Han Zhao and Jingbo Wang and Wenxuan Song and Shuai Chen and Yang Liu and Yan Wang and Haoang Li and Donglin Wang},
+    journal = {arXiv preprint arXiv:2602.17259},
+    year={2026},
+} 
 ```
