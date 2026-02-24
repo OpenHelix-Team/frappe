@@ -1,4 +1,4 @@
-# Infusing World Modeling into Generalist Policies via Multiple Future Representation Alignment
+# FRAPPE: Infusing World Modeling into Generalist Policies via Multiple Future Representation Alignment
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2602.17259) [![Page](https://img.shields.io/badge/Project--Page-blue?style=for-the-badge&logo=homepage&logoColor=white)](https://h-zhao1997.github.io/frappe) [![Hugging Face Collection](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/collections/hhhJB/frappe) 
