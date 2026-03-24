@@ -563,8 +563,8 @@ def main():
                 
                 with torch.no_grad():
                     batch_size, _, C, H, W = images.shape
-                    input_images = images[:, :6]  
-                    future_images = images[:, 6:7]  
+                    input_images = images[:, [0, 1, 2, 6, 7, 8]] 
+                    future_images = images[:, 3:4]   
                     future_images = F.interpolate(
                         future_images.squeeze(1), 
                         size=(args.resolution, args.resolution),  
